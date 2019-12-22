@@ -37,4 +37,17 @@ sample_image_L2 = \
      1, 0, 0,
      1, 1, 0]
 ```
-We will randomly change it with noise in 2 or 3 locations. (See ArrayGenerator.py)
+ArrayGenerator will write out the arrays to it's respective txt file.
+See the below sample output:
+```
+Enter L or H: H
+1   0   1
+1   0   1
+0   1   1
+1   0   1
+Is this valid? Y/N: y
+```
+H_images.txt:
+```
+[1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1]
+```
