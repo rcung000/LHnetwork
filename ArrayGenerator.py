@@ -59,7 +59,7 @@ def noisyarray(geneImage,letter):
         imagefile.writelines("[" + str(geneImage[0]) + ", " + str(geneImage[1]) + ", " + str(geneImage[2]) + ", "
                              + str(geneImage[3]) + ", " + str(geneImage[4]) + ", " + str(geneImage[5]) + ", "
                              + str(geneImage[6]) + ", " + str(geneImage[7]) + ", " + str(geneImage[8]) + ", "
-                             + str(geneImage[9]) + ", " + str(geneImage[10]) + ", " + str(geneImage[11]) + "]")
+                             + str(geneImage[9]) + ", " + str(geneImage[10]) + ", " + str(geneImage[11]) + "]\n")
     imagefile.close()
 
 
