@@ -39,9 +39,14 @@ sample_image_L4 = \
      0, 1, 0,
      0, 1, 0,
      0, 1, 1]
+sample_image_L5 = \
+    [0, 0, 0,
+     0, 0, 0,
+     1, 0, 0,
+     1, 1, 0]
 
 sample_image_H_List = [sample_image_H0, sample_image_H1, sample_image_H2]
-sample_image_L_List = [sample_image_L0, sample_image_L1, sample_image_L2, sample_image_L3, sample_image_L4]
+sample_image_L_List = [sample_image_L0, sample_image_L1, sample_image_L2, sample_image_L3, sample_image_L4, sample_image_L5]
 # seeding
 random.seed()
 # noisyarray
