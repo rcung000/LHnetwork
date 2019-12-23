@@ -36,6 +36,21 @@ sample_image_L2 = \
      1, 0, 0,
      1, 0, 0,
      1, 1, 0]
+sample_image_L3 = \
+    [0, 1, 0,
+     0, 1, 0,
+     0, 1, 0,
+     0, 1, 0]
+sample_image_L4 = \
+    [0, 1, 0,
+     0, 1, 0,
+     0, 1, 0,
+     0, 1, 1]
+sample_image_L5 = \
+    [0, 0, 0,
+     0, 0, 0,
+     1, 0, 0,
+     1, 1, 0]
 ```
 ArrayGenerator will write out the arrays to it's respective txt file.
 See the below sample output:
