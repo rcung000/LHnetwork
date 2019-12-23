@@ -29,8 +29,19 @@ sample_image_L2 = \
      1, 0, 0,
      1, 0, 0,
      1, 1, 0]
+sample_image_L3 = \
+    [0, 1, 0,
+     0, 1, 0,
+     0, 1, 0,
+     0, 1, 0]
+sample_image_L4 = \
+    [0, 1, 0,
+     0, 1, 0,
+     0, 1, 0,
+     0, 1, 1]
+
 sample_image_H_List = [sample_image_H0, sample_image_H1, sample_image_H2]
-sample_image_L_List = [sample_image_L0, sample_image_L1, sample_image_L2]
+sample_image_L_List = [sample_image_L0, sample_image_L1, sample_image_L2, sample_image_L3, sample_image_L4]
 # seeding
 random.seed()
 # noisyarray
@@ -68,6 +79,6 @@ def noisyarray(geneImage,letter):
 imageinput = str(input("Enter L or H: "))
 selected_image = []
 if imageinput == 'L' or imageinput == 'l' :
-    noisyarray(sample_image_L_List[random.randint(0, 2)], "L")
+    noisyarray(sample_image_L_List[random.randint(0, 4)], "L")
 elif imageinput == 'H' or imageinput == 'h' :
     noisyarray(sample_image_H_List[random.randint(0, 2)], "H")
