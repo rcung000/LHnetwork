@@ -29,25 +29,26 @@ for x in range(0, tuplesize, 1):
     poscount += 1
 
 def binarytree(tuplearr):
-    if(tuplearr[0] == 0):
-        if(tuplearr[1] == 0):
-            if(tuplearr[2] == 0):
+    """used to read and determine values"""
+    if(tuplearr[0] == 0 or tuplearr[0] == '0'):
+        if(tuplearr[1] == 0 or tuplearr[1] == '0'):
+            if(tuplearr[2] == 0 or tuplearr[2] == '0'):
                 return '000'
             else:
                 return '001'
         else:
-            if(tuplearr[2] == 0):
+            if(tuplearr[2] == 0 or tuplearr[2] == '0'):
                 return '010'
             else:
                 return '011'
     else:
-        if(tuplearr[1] == 0):
-            if(tuplearr[2] == 0):
+        if(tuplearr[1] == 0 or tuplearr[1] == '0'):
+            if(tuplearr[2] == 0 or tuplearr[2] == '0'):
                 return '100'
             else:
                 return '101'
         else:
-            if(tuplearr[2] == 0):
+            if(tuplearr[2] == 0 or tuplearr[2] == '0'):
                 return '110'
             else:
                 return '111'
