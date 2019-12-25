@@ -114,3 +114,37 @@ for a in range(100, 299, 1):
     print (H_tuple2)
     print (H_tuple3)
     print (H_tuple4)
+H_open.close()
+
+L_open = open(L_dataset)
+for b in range(100, 299, 1):
+    L_data = L_open.readline()
+    #Strip off [ , ] and isolate
+    step0 = L_data.split('[')
+    step1 = step0[1]
+    step2 = step1.split(']')
+    step3 = step2[0]
+    step4 = step3.split(', ')
+    L_arr = []
+    # Corresponding J sets
+    L_1 = []
+    L_2 = []
+    L_3 = []
+    L_4 = []
+    for x in range(0, 12, 1):
+        L_arr.append(step4[x])
+    #Split into tuples
+    for a in range(0, tuplesize, 1) :
+        L_1.append(L_arr[placements[0][a]])
+        L_2.append(L_arr[placements[1][a]])
+        L_3.append(L_arr[placements[2][a]])
+        L_4.append(L_arr[placements[3][a]])
+    #Count into memory
+    L_tuple1[binarytree(L_1)] += 1
+    L_tuple2[binarytree(L_2)] += 1
+    L_tuple3[binarytree(L_3)] += 1
+    L_tuple4[binarytree(L_4)] += 1
+    print (L_tuple1)
+    print (L_tuple2)
+    print (L_tuple3)
+    print (L_tuple4)
