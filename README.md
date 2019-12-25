@@ -66,3 +66,21 @@ H_images.txt:
 ```
 [1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1]
 ```
+# LHnetwork
+Reads through L_images and H_images and stores it into memory.
+
+Reads through a 3rd text file T_images with a mix of H and L images
+Sample Return:
+```
+532 H hits
+94 L hits
+[['1', '0', '1', '1', '0', '1', '1', '1', '1', '1', '0', '1', 'H'], 'Actual Class: H', 'Predicted Class: H', True]
+93.0% Accuracy
+
+Process finished with exit code 0
+```
+
+# How to use
+Run ArrayGenerator if you'd like to use your own arrays. (Remember to delete H_images.txt, L_images.txt)
+Select 200 to put into T_images.txt
+Run LHnetwork and it'll run as long as you have H_images.txt, L_images.txt, and T_images.txt in the same directory.
