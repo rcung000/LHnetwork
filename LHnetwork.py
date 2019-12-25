@@ -78,7 +78,7 @@ L_tuple4 = [0, 0, 0, 0, 0, 0, 0, 0]
 L_dataset = "L_images.txt"
 H_dataset = "H_images.txt"
 H_open = open(H_dataset)
-for a in range(100, 299, 1):
+for a in range(0, 199, 1):
     H_data = H_open.readline()
     #Strip off [ , ] and isolate
     step0 = H_data.split('[')
@@ -117,7 +117,7 @@ print (H_tuple4)
 H_open.close()
 
 L_open = open(L_dataset)
-for b in range(100, 299, 1):
+for b in range(0, 199, 1):
     L_data = L_open.readline()
     #Strip off [ , ] and isolate
     step0 = L_data.split('[')
@@ -149,3 +149,76 @@ print (L_tuple2)
 print (L_tuple3)
 print (L_tuple4)
 L_open.close()
+
+# TESTING
+T_open = open("T_images.txt")
+#numofTest = int(input("Enter an integer, greater than 1 but no bigger than 299"))
+correct_hits = 0
+total_hits = 0
+#if numofTest < 1 or numofTest > 100:
+#    print("invalid entry")
+#    sys.exit()
+# RUNNING
+for e in range(0, 200, 1):
+    total_hits += 1
+    actual_class = ""
+    predicted_class = ""
+    flag = False
+    # Split and isolate
+    T_data = T_open.readline()
+    step0 = T_data.split('[')
+    step1 = step0[1]
+    step2 = step1.split(']')
+    step3 = step2[0]
+    step4 = step3.split(', ')
+    T_arr = []
+    print(T_arr)
+    # Corresponding J sets
+    T_1 = []
+    T_2 = []
+    T_3 = []
+    T_4 = []
+    for x in range(0, 13, 1) :
+        T_arr.append(step4[x])
+    print(T_arr)
+    if(T_arr[12] == 'H'):
+        actual_class = "Actual Class: H"
+    elif(T_arr[12] == 'L'):
+        actual_class = "Actual Class: L"
+    # Split into tuples
+    for a in range(0, tuplesize, 1) :
+        T_1.append(T_arr[placements[0][a]])
+        T_2.append(T_arr[placements[1][a]])
+        T_3.append(T_arr[placements[2][a]])
+        T_4.append(T_arr[placements[3][a]])
+    # Filter through binary tree and add up hits from H memory and L memory.
+    L_hits = 0
+    H_hits = 0
+    L_hits += L_tuple1[binarytree(T_1)]
+    L_hits += L_tuple2[binarytree(T_2)]
+    L_hits += L_tuple3[binarytree(T_3)]
+    L_hits += L_tuple4[binarytree(T_4)]
+    H_hits += H_tuple1[binarytree(T_1)]
+    H_hits += H_tuple2[binarytree(T_2)]
+    H_hits += H_tuple3[binarytree(T_3)]
+    H_hits += H_tuple4[binarytree(T_4)]
+    if(H_hits > L_hits):
+        predicted_class = "Predicted Class: H"
+        if "H" in actual_class:
+            flag = True
+    elif(L_hits > H_hits):
+        predicted_class = "Predicted Class: L"
+        if "L" in actual_class:
+            flag = True
+    else:
+        predicted_class = "Predicted Class: ?"
+        flag = False
+        # On the off-chance it's somehow equal or if an error occurs.
+    print(str(H_hits)+" H hits")
+    print(str(L_hits)+" L hits")
+    output = [T_arr, actual_class, predicted_class, flag]
+    print(output)
+    if(flag):
+        correct_hits += 1
+    print(str(correct_hits/total_hits*100)+"% Accuracy")
+T_open.close()
