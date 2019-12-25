@@ -110,10 +110,10 @@ for a in range(100, 299, 1):
     H_tuple2[binarytree(H_2)] += 1
     H_tuple3[binarytree(H_3)] += 1
     H_tuple4[binarytree(H_4)] += 1
-    print (H_tuple1)
-    print (H_tuple2)
-    print (H_tuple3)
-    print (H_tuple4)
+print (H_tuple1)
+print (H_tuple2)
+print (H_tuple3)
+print (H_tuple4)
 H_open.close()
 
 L_open = open(L_dataset)
@@ -144,7 +144,8 @@ for b in range(100, 299, 1):
     L_tuple2[binarytree(L_2)] += 1
     L_tuple3[binarytree(L_3)] += 1
     L_tuple4[binarytree(L_4)] += 1
-    print (L_tuple1)
-    print (L_tuple2)
-    print (L_tuple3)
-    print (L_tuple4)
+print (L_tuple1)
+print (L_tuple2)
+print (L_tuple3)
+print (L_tuple4)
+L_open.close()
